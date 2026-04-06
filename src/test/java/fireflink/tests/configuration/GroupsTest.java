@@ -34,5 +34,17 @@ public class GroupsTest extends BaseClass {
 		assertTrue(groupsPage.createGroupSliderIsDisplayed(), "Create group slider is not displayed");
 
 	}
+	@Test(description = "Verify user is able to create a group", retryAnalyzer = RetryMechanism.class)
+	public void GR003()
+
+	{
+
+		signPage.signToFireflink(email, password);
+		allProjectsPage.navigateToGroups();
+		assertTrue(groupsPage.addGroupButtonIsDisplayed(), "Add group button is not displayed");
+		groupsPage.clickOnAddgroupButton();
+		assertTrue(groupsPage.createGroupSliderIsDisplayed(), "Create group slider is not displayed");
+
+	}
 
 }
