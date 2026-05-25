@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import fireflink.TestComponents.BaseClass;
+import fireflink.components.BaseClass;
 
 public class AllProjectsPage extends BaseClass {
 
@@ -14,6 +14,8 @@ public class AllProjectsPage extends BaseClass {
 		PageFactory.initElements(driver, this);
 
 	}
+	
+	//Elements
 
 	@FindBy(xpath = "//div[@class='ff-app-header-nav-bar-item']/div[text()='Configuration']")
 	private WebElement configurationTab;
@@ -24,6 +26,9 @@ public class AllProjectsPage extends BaseClass {
 	@FindBy(xpath = "//span[text()='Groups']")
 	private WebElement groupsTab;
 
+	
+	//Steps
+	
 	public void navigateToGroups() {
 		waitUtils.waitTillElementIsClickable(configurationTab);
 		configurationTab.click();

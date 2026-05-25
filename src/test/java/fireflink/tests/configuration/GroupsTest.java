@@ -4,12 +4,12 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
-import fireflink.TestComponents.BaseClass;
-import fireflink.TestComponents.RetryMechanism;
+import fireflink.components.BaseClass;
+import fireflink.components.RetryMechanism;
 import io.qameta.allure.Description;
 
 public class GroupsTest extends BaseClass {
-	@Test(description = "Verify user is able to view create group slider")
+	@Test(description = "Verify user is able to view create group slider", groups = { "smoke" })
 	public void GR001()
 
 	{
@@ -32,8 +32,12 @@ public class GroupsTest extends BaseClass {
 		assertTrue(groupsPage.addGroupButtonIsDisplayed(), "Add group button is not displayed");
 		groupsPage.clickOnAddgroupButton();
 		assertTrue(groupsPage.createGroupSliderIsDisplayed(), "Create group slider is not displayed");
+		groupsPage.enterGroupName("Test001");
+		groupsPage.selectAllUsers();
+		groupsPage.clickCreateButton();
 
 	}
+
 	@Test(description = "Verify user is able to create a group", retryAnalyzer = RetryMechanism.class)
 	public void GR003()
 

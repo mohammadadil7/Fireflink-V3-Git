@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import fireflink.TestComponents.BaseClass;
+import fireflink.components.BaseClass;
 
 public class GroupsPage extends BaseClass {
 
@@ -24,6 +24,15 @@ public class GroupsPage extends BaseClass {
 	@FindBy(css = ".ff-drawer-title")
 	private WebElement createEmailGroupSlider;
 
+	@FindBy(xpath = "//input[@placeholder='Enter Group Name']")
+	private WebElement enterGroupNameTextfield;
+
+	@FindBy(xpath = "//button[@form='create group']")
+	private WebElement createButton;
+
+	@FindBy(xpath = "//div[text()='Recipient Name']//input")
+	private WebElement allUsersCheckBox;
+
 	public boolean addGroupButtonIsDisplayed() {
 		boolean displayed = addGroupButton.isDisplayed();
 		return displayed;
@@ -38,6 +47,21 @@ public class GroupsPage extends BaseClass {
 		waitUtils.waitTillElementIsVisible(createEmailGroupSlider);
 		boolean displayed = createEmailGroupSlider.isDisplayed();
 		return displayed;
+	}
+
+	public void enterGroupName(String groupName) {
+
+		enterGroupNameTextfield.sendKeys(groupName);
+	}
+
+	public void selectAllUsers() {
+
+		allUsersCheckBox.click();
+
+	}
+
+	public void clickCreateButton() {
+		createButton.click();
 	}
 
 }

@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Reporter;
 
-import fireflink.TestComponents.BaseClass;
+import fireflink.components.BaseClass;
 
 public class SignPage extends BaseClass {
 

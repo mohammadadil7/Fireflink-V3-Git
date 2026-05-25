@@ -1,0 +1,21 @@
+{
+  "LG001": {
+    "testCaseName": "Valid Login",
+    "execute": true,
+    "data": {
+      "email": "admin@test.com",
+      "password": "Password123",
+      "expectedPage": "Dashboard"
+    }
+  },
+
+  "LG002": {
+    "testCaseName": "Invalid Login",
+    "execute": true,
+    "data": {
+      "email": "wrong@test.com",
+      "password": "123",
+      "expectedError": "Invalid credentials"
+    }
+  }
+}

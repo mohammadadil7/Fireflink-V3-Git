@@ -1,11 +1,11 @@
-package fireflink.utils;
+package fireflink.testutils;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.WebElement;
 
-import fireflink.TestComponents.BaseClass;
+import fireflink.components.BaseClass;
 
 public class VerificationUtils extends BaseClass {
 

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="fireflink.tests.GroupsTest">
+      <class name="fireflink.tests.configuration.GroupsTest">
         <methods>
+          <include name="GR002"/>
+          <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="takeScreenshot"/>
-          <include name="test"/>
         </methods>
-      </class> <!-- fireflink.tests.GroupsTest -->
+      </class> <!-- fireflink.tests.configuration.GroupsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

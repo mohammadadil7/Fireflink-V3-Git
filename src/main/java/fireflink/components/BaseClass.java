@@ -1,4 +1,4 @@
-package fireflink.TestComponents;
+package fireflink.components;
 
 import java.time.Duration;
 
@@ -16,9 +16,9 @@ import org.testng.annotations.Listeners;
 import fireflink.pom.AllProjectsPage;
 import fireflink.pom.GroupsPage;
 import fireflink.pom.SignPage;
-import fireflink.utils.JavaUtility;
-import fireflink.utils.VerificationUtils;
-import fireflink.utils.WaitUtils;
+import fireflink.testutils.JavaUtility;
+import fireflink.testutils.VerificationUtils;
+import fireflink.testutils.WaitUtils;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.testng.AllureTestNg;
 

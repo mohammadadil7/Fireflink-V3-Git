@@ -1,4 +1,4 @@
-package fireflink.utils;
+package fireflink.testutils;
 
 import java.time.Duration;
 
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import fireflink.TestComponents.BaseClass;
+import fireflink.components.BaseClass;
 
 public class WaitUtils extends BaseClass {
 
