@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Smoke_Priority_1" class="navigator-link">
-              <span class="suite-name border-passed">Smoke Priority 1</span>
+              <span class="suite-name border-failed">Smoke Priority 1</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,26 +92,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">2 methods, 2 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Smoke_Priority_1" class="hide-methods passed suite-Smoke_Priority_1"> (hide)</a> <!-- hide-methods passed suite-Smoke_Priority_1 -->
-                      <a href="#" panel-name="suite-Smoke_Priority_1" class="show-methods passed suite-Smoke_Priority_1"> (show)</a> <!-- show-methods passed suite-Smoke_Priority_1 -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Smoke_Priority_1" class="hide-methods failed suite-Smoke_Priority_1"> (hide)</a> <!-- hide-methods failed suite-Smoke_Priority_1 -->
+                      <a href="#" panel-name="suite-Smoke_Priority_1" class="show-methods failed suite-Smoke_Priority_1"> (show)</a> <!-- show-methods failed suite-Smoke_Priority_1 -->
                     </span>
-                    <div class="method-list-content passed suite-Smoke_Priority_1">
+                    <div class="method-list-content failed suite-Smoke_Priority_1">
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Smoke_Priority_1" title="fireflink.tests.configuration.GroupsTest" class="method navigator-link" hash-for-method="GR002">GR002</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Smoke_Priority_1" title="fireflink.tests.configuration.GroupsTest" class="method navigator-link" hash-for-method="GR003">GR003</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Smoke_Priority_1 -->
+                    </div> <!-- method-list-content failed suite-Smoke_Priority_1 -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -123,9 +123,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Smoke_Priority_1" class="panel Smoke_Priority_1">
-          <div class="suite-Smoke_Priority_1-class-passed">
+          <div class="suite-Smoke_Priority_1-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">fireflink.tests.configuration.GroupsTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -134,8 +134,33 @@
                   <a name="GR002">
                   </a> <!-- GR002 -->
                   <span class="method-name">GR002</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button type=&quot;submit&quot; class=&quot;ff-button ff-button--small ff-button--primary&quot; style=&quot;width: 175px; height: 28px;&quot;&gt;...&lt;/button&gt; is not clickable at point (1024, 399). Other element would receive the click: &lt;div id=&quot;loader&quot; style=&quot;display: flex;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=148.0.7778.217)
+Build info: version: &apos;4.24.0&apos;, revision: &apos;748ffc9bc3&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4630675012fd99c39693605fcab2ac4f, clickElement {id=f.976D4E752521B12BB54D2CED03E5FB96.d.3AD2359FB8B5A419456E6513C3CF9DF7.e.5}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49708}, goog:processID: 133236, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49708/devtoo..., se:cdpVersion: 148.0.7778.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (4630675012fd99c39693605fcab2ac4f)] -&gt; xpath: //button[@type=&apos;submit&apos;]]
+Session ID: 4630675012fd99c39693605fcab2ac4f
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+	at fireflink.pom.SignPage.signToFireflink(SignPage.java:41)
+	at fireflink.tests.configuration.GroupsTest.GR002(GroupsTest.java:39)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
                   <em>
-(Verify user is able to create a group)                  </em>
+(GR002_Verify user is able to create a group)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -143,12 +168,37 @@
                   <a name="GR003">
                   </a> <!-- GR003 -->
                   <span class="method-name">GR003</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button type=&quot;submit&quot; class=&quot;ff-button ff-button--small ff-button--primary&quot; style=&quot;width: 175px; height: 28px;&quot;&gt;...&lt;/button&gt; is not clickable at point (1024, 399). Other element would receive the click: &lt;div id=&quot;loader&quot; style=&quot;display: flex;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=148.0.7778.217)
+Build info: version: &apos;4.24.0&apos;, revision: &apos;748ffc9bc3&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [77833874ac14312ae42770be44394d01, clickElement {id=f.E53E55FD4A768FAFA796E1D4A944A4C8.d.0FCC6770F95424683C3598DF234559D0.e.7}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59482}, goog:processID: 22040, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59482/devtoo..., se:cdpVersion: 148.0.7778.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (77833874ac14312ae42770be44394d01)] -&gt; xpath: //button[@type=&apos;submit&apos;]]
+Session ID: 77833874ac14312ae42770be44394d01
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+	at fireflink.pom.SignPage.signToFireflink(SignPage.java:41)
+	at fireflink.tests.configuration.GroupsTest.GR003(GroupsTest.java:60)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
                   <em>
-(Verify user is able to create a group and delete)                  </em>
+(GR003_Verify user is able to create a group and delete)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Smoke_Priority_1-class-passed -->
+          </div> <!-- suite-Smoke_Priority_1-class-failed -->
         </div> <!-- panel Smoke_Priority_1 -->
         <div panel-name="test-xml-Smoke_Priority_1" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -159,6 +209,9 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Smoke Priority 1&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;fireflink.testutils.AllureListener&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Groups Test&quot; verbose=&quot;0&quot;&gt;
     &lt;groups&gt;
       &lt;run&gt;
@@ -208,18 +261,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'GR002')
+data.setCell(0, 1, 'GR003')
 data.setCell(0, 2, 'fireflink.tests.configuration.GroupsTest')
-data.setCell(0, 3, 16118);
+data.setCell(0, 3, 15302);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'GR003')
+data.setCell(1, 1, 'GR002')
 data.setCell(1, 2, 'fireflink.tests.configuration.GroupsTest')
-data.setCell(1, 3, 13682);
+data.setCell(1, 3, 12074);
 window.suiteTableData['Smoke_Priority_1']= { tableData: data, tableDiv: 'times-div-Smoke_Priority_1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 29 seconds</span>
+              <span class="suite-total-time">Total running time: 27 seconds</span>
               <div id="times-div-Smoke_Priority_1">
               </div> <!-- times-div-Smoke_Priority_1 -->
             </div> <!-- times-div -->
@@ -230,18 +283,6 @@ return data;
             <span class="header-content">Reporter output for Smoke Priority 1</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">GR002</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Successfully signed in to fireflink</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">GR003</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Successfully signed in to fireflink</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Smoke_Priority_1" class="panel">
@@ -270,24 +311,28 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">GR002</span>
-                <span class="method-start">3858 ms</span>
+                <span class="method-start">12059 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">19988 ms</span>
+                <span class="method-start">24351 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">20207 ms</span>
+                <span class="method-start">25010 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">GR003</span>
-                <span class="method-start">21829 ms</span>
+                <span class="method-start">28157 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">35515 ms</span>
+                <span class="method-start">43559 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

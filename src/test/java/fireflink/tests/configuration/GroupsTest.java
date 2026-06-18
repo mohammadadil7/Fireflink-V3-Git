@@ -5,11 +5,16 @@ import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
 import fireflink.components.BaseClass;
-import io.qameta.allure.Allure;
-import io.qameta.allure.Step;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 
 public class GroupsTest extends BaseClass {
-	@Test(description = "Verify user is able to view create group slider", groups = "smoke")
+	
+	@Feature("Groups")
+	@Story("Open create group slider")
+	@Owner("Mohammad Adil")
+	@Test(description = "GR001_Verify user is able to view create group slider", groups = "smoke")
 	public void GR001()
 
 	{
@@ -22,7 +27,10 @@ public class GroupsTest extends BaseClass {
 
 	}
 
-	@Test(description = "Verify user is able to create a group")
+	@Feature("Groups")
+	@Story("Create a group")
+	@Owner("Mohammad Adil")
+	@Test(description = "GR002_Verify user is able to create a group")
 	public void GR002()
 
 	{
@@ -41,7 +49,10 @@ public class GroupsTest extends BaseClass {
 
 	}
 
-	@Test(description = "Verify user is able to create a group and delete")
+	@Feature("Groups")
+	@Story("Delete a created group")
+	@Owner("Mohammad Adil")
+	@Test(description = "GR003_Verify user is able to create a group and delete")
 	public void GR003()
 
 	{

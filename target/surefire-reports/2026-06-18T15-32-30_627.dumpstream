@@ -1,4 +1,4 @@
-# Created at 2026-06-18T14:46:44.734
+# Created at 2026-06-18T15:32:31.019
 Boot Manifest-JAR contains absolute paths in classpath 'D:\Fireflink V3_Automation\target\test-classes'
 Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
 'other' has different root

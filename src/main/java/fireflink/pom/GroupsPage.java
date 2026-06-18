@@ -31,7 +31,7 @@ public class GroupsPage extends BaseClass {
 	@FindBy(xpath = "//button[@form='create group']")
 	private WebElement createButton;
 
-	@FindBy(xpath = "//div[text()='Recipient Name']//span[@class='ff-checkbox-custom']")
+	@FindBy(xpath = "//div[text()='Recipien Name']//span[@class='ff-checkbox-custom']")
 	private WebElement allUsersCheckBox;
 
 	@Step("Add group radio button is displayed")

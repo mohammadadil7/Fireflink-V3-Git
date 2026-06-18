@@ -6,4 +6,6 @@ fireflink\pom\AllProjectsPage.class
 fireflink\testutils\JavaUtility.class
 fireflink\testutils\WaitUtils.class
 fireflink\pom\GroupsPage.class
+fireflink\testutils\AllureUtils.class
 fireflink\pom\CommonPage.class
+fireflink\testutils\AllureListener.class
