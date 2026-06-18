@@ -5,6 +5,7 @@
     <classes>
       <class name="fireflink.tests.configuration.GroupsTest">
         <methods>
+          <include name="GR003"/>
           <include name="GR002"/>
           <include name="tearDown"/>
           <include name="setUp"/>

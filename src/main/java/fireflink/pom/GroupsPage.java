@@ -31,7 +31,10 @@ public class GroupsPage extends BaseClass {
 	@FindBy(xpath = "//button[@form='create group']")
 	private WebElement createButton;
 
-	@FindBy(xpath = "//div[text()='Recipien Name']//span[@class='ff-checkbox-custom']")
+	@FindBy(xpath = "//span[text()='Maximum 25 characters allowed']")
+	private WebElement max25CharText;
+
+	@FindBy(xpath = "//div[text()='Recipient Name']//span[@class='ff-checkbox-custom']")
 	private WebElement allUsersCheckBox;
 
 	@Step("Add group radio button is displayed")
@@ -47,7 +50,6 @@ public class GroupsPage extends BaseClass {
 		addGroupButton.click();
 	}
 
-	
 	public boolean createGroupSliderIsDisplayed() {
 		waitUtils.waitTillElementIsVisible(createEmailGroupSlider);
 		boolean displayed = createEmailGroupSlider.isDisplayed();
@@ -61,15 +63,25 @@ public class GroupsPage extends BaseClass {
 		enterGroupNameTextfield.sendKeys(groupName);
 	}
 
+	@Step("Select all users")
+
 	public void selectAllUsers() {
 
 		allUsersCheckBox.click();
 
 	}
 
+	@Step("Click on create button")
+
 	public void clickCreateButtonUsingJS() {
 		waitUtils.waitTillElementIsClickable(createButton);
 		jse.executeScript("arguments[0].click();", createButton);
+	}
+
+	@Step("Maximum 25 characters allowed text is displayed")
+	public boolean max25CharErrorIsDisplayed() {
+		waitUtils.waitTillElementIsClickable(groupsPage.max25CharText);
+		return groupsPage.max25CharText.isDisplayed();
 	}
 
 }

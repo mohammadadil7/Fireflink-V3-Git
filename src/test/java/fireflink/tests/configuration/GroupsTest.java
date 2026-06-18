@@ -2,6 +2,7 @@ package fireflink.tests.configuration;
 
 import static org.testng.Assert.assertTrue;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import fireflink.components.BaseClass;
@@ -10,7 +11,9 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 
 public class GroupsTest extends BaseClass {
-	
+
+	private String groupName;
+
 	@Feature("Groups")
 	@Story("Open create group slider")
 	@Owner("Mohammad Adil")
@@ -34,7 +37,7 @@ public class GroupsTest extends BaseClass {
 	public void GR002()
 
 	{
-		String groupName = "QaAutomationGroup" + javaUtility.generateRandomNumber(4);
+		groupName = "QaAutomationGroup" + javaUtility.generateRandomNumber(4);
 
 		signPage.signToFireflink(email, password);
 		allProjectsPage.navigateToGroups();
@@ -52,17 +55,32 @@ public class GroupsTest extends BaseClass {
 	@Feature("Groups")
 	@Story("Delete a created group")
 	@Owner("Mohammad Adil")
-	@Test(description = "GR003_Verify user is able to create a group and delete")
+	@Test(description = "GR003_Verify user is able to create a group and delete", dependsOnMethods = "GR002")
 	public void GR003()
 
 	{
-
 		signPage.signToFireflink(email, password);
 		allProjectsPage.navigateToGroups();
-		assertTrue(groupsPage.addGroupButtonIsDisplayed(), "Add group button is not displayed");
-		groupsPage.clickOnAddgroupButton();
-		assertTrue(groupsPage.createGroupSliderIsDisplayed(), "Create group slider is not displayed");
+		commonPage.searchForAnEntity(groupName);
+		Assert.assertTrue(commonPage.deleteAnEntity());
+	}
 
+	@Feature("Groups")
+	@Story("Maximum 25 characters should be allowed in group name")
+	@Owner("Mohammad Adil")
+	@Test(description = "GR004_Verify Maximum 25 characters allowed error is displayed")
+	public void GR004()
+
+	{
+		
+		
+		signPage.signToFireflink(email, password);
+		allProjectsPage.navigateToGroups();
+		groupsPage.clickOnAddgroupButton();
+		Assert.assertTrue(groupsPage.createGroupSliderIsDisplayed());
+		groupsPage.enterGroupName("Test_"+javaUtility.generateRandomNumber(23));
+		Assert.assertTrue(groupsPage.max25CharErrorIsDisplayed());
+		
 	}
 
 }

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import fireflink.components.BaseClass;
+import io.qameta.allure.Step;
 
 public class AllProjectsPage extends BaseClass {
 
@@ -28,7 +29,8 @@ public class AllProjectsPage extends BaseClass {
 
 	
 	//Steps
-	
+	@Step("Navigate to groups page")
+
 	public void navigateToGroups() {
 		waitUtils.waitTillElementIsClickable(configurationTab);
 		configurationTab.click();
