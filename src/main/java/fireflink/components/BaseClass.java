@@ -2,6 +2,7 @@ package fireflink.components;
 
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 
 import fireflink.pom.AllProjectsPage;
+import fireflink.pom.CommonPage;
 import fireflink.pom.GroupsPage;
 import fireflink.pom.SignPage;
 import fireflink.testutils.JavaUtility;
@@ -42,6 +44,8 @@ public class BaseClass {
 	public static VerificationUtils verificationUtils;
 	public static GroupsPage groupsPage;
 	public static Actions action;
+	public static JavascriptExecutor jse;
+	public static  CommonPage commonPage;
 	// public static RolesKeywords rolesKeywords;
 
 	// public static Actions actions;
@@ -83,7 +87,8 @@ public class BaseClass {
 		allProjectsPage = new AllProjectsPage(driver);
 		verificationUtils = new VerificationUtils();
 		groupsPage = new GroupsPage(driver);
-
+		jse = (JavascriptExecutor) driver;
+		commonPage=new CommonPage(driver);
 		action = new Actions(driver);
 		// rolesKeywords = new RolesKeywords();
 		// action = new Actions(driver);

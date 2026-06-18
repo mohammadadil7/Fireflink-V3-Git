@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Reporter;
 
 import fireflink.components.BaseClass;
+import io.qameta.allure.Step;
 
 public class SignPage extends BaseClass {
 
@@ -31,6 +32,7 @@ public class SignPage extends BaseClass {
 	@FindBy(xpath = "//span[text()='All Projects']")
 	private WebElement allProjectsText;
 
+	@Step("Sign-in to Fireflink")
 	public void signToFireflink(String email, String password) {
 
 		waitUtils.waitForSeconds(10000);
