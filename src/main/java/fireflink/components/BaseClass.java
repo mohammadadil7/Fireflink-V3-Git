@@ -18,6 +18,7 @@ import fireflink.pom.CommonPage;
 import fireflink.pom.GroupsPage;
 import fireflink.pom.SignPage;
 import fireflink.testutils.JavaUtility;
+import fireflink.testutils.JsonUtils;
 import fireflink.testutils.VerificationUtils;
 import fireflink.testutils.WaitUtils;
 import io.qameta.allure.Attachment;
@@ -36,6 +37,7 @@ public class BaseClass {
 	public static JavaUtility javaUtility = new JavaUtility();
 	// public static LoginKeywords loginKeywords;
 	public static SignPage signPage;
+	public static JsonUtils jsonUtils;
 	public static WaitUtils waitUtils;
 	public static AllProjectsPage allProjectsPage;
 	public static VerificationUtils verificationUtils;
@@ -87,6 +89,7 @@ public class BaseClass {
 		jse = (JavascriptExecutor) driver;
 		commonPage=new CommonPage(driver);
 		action = new Actions(driver);
+		jsonUtils = new JsonUtils();
 		// rolesKeywords = new RolesKeywords();
 		// action = new Actions(driver);
 

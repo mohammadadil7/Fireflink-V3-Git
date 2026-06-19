@@ -1,21 +1,14 @@
 {
-  "LG001": {
-    "testCaseName": "Valid Login",
-    "execute": true,
-    "data": {
-      "email": "admin@test.com",
-      "password": "Password123",
-      "expectedPage": "Dashboard"
-    }
-  },
-
-  "LG002": {
-    "testCaseName": "Invalid Login",
-    "execute": true,
-    "data": {
-      "email": "wrong@test.com",
-      "password": "123",
-      "expectedError": "Invalid credentials"
-    }
-  }
+	"GR005": {
+		"testCaseName": "GR005_Verify user is able to add a recipient in Create Email Group slider",
+		"recipientName": "AutomationGuestUser",
+		"recipientEmail": "guestautomation01@gmial.com"
+	},
+	"GR002": {
+		"testCaseName": "Invalid Login",
+		"execute": true,
+		"email": "wrong@test.com",
+		"password": "123",
+		"expectedError": "Invalid credentials"
+	}
 }

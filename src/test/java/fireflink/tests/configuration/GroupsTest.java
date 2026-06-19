@@ -3,6 +3,7 @@ package fireflink.tests.configuration;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import fireflink.components.BaseClass;
@@ -13,6 +14,7 @@ import io.qameta.allure.Story;
 public class GroupsTest extends BaseClass {
 
 	private String groupName;
+	private String groupsTestdataFileName = "GroupsTestData";
 
 	@Feature("Groups")
 	@Story("Open create group slider")
@@ -27,6 +29,7 @@ public class GroupsTest extends BaseClass {
 		assertTrue(groupsPage.addGroupButtonIsDisplayed(), "Add group button is not displayed");
 		groupsPage.clickOnAddgroupButton();
 		assertTrue(groupsPage.createGroupSliderIsDisplayed(), "Create group slider is not displayed");
+		Reporter.log("Create group slider is displayed successfully", true);
 
 	}
 
@@ -49,6 +52,7 @@ public class GroupsTest extends BaseClass {
 		groupsPage.selectAllUsers();
 		groupsPage.clickCreateButtonUsingJS();
 		assertTrue(commonPage.successToasterIsDisplayed(), "Success toaster is not displayed");
+		Reporter.log("Group is created successfully", true);
 
 	}
 
@@ -62,25 +66,50 @@ public class GroupsTest extends BaseClass {
 		signPage.signToFireflink(email, password);
 		allProjectsPage.navigateToGroups();
 		commonPage.searchForAnEntity(groupName);
-		Assert.assertTrue(commonPage.deleteAnEntity());
+		Assert.assertTrue(commonPage.deleteAnEntityAndVerify());
+		Reporter.log("Created group is deleted successfully", true);
+
 	}
 
 	@Feature("Groups")
-	@Story("Maximum 25 characters should be allowed in group name")
+	@Story("Error message should display if group name is skipped")
 	@Owner("Mohammad Adil")
-	@Test(description = "GR004_Verify Maximum 25 characters allowed error is displayed")
+	@Test(description = "GR004_Verify Group Name is required error is displayed")
 	public void GR004()
 
 	{
-		
-		
+
 		signPage.signToFireflink(email, password);
 		allProjectsPage.navigateToGroups();
 		groupsPage.clickOnAddgroupButton();
 		Assert.assertTrue(groupsPage.createGroupSliderIsDisplayed());
-		groupsPage.enterGroupName("Test_"+javaUtility.generateRandomNumber(23));
-		Assert.assertTrue(groupsPage.max25CharErrorIsDisplayed());
-		
+		groupsPage.selectAllUsers();
+		Assert.assertTrue(groupsPage.nameIsRequiredErrorTextIsDisplayed());
+		Reporter.log("Name required error is displayed", true);
+
+	}
+
+	@Feature("Groups")
+	@Story("User can add a guest in the create group slider")
+	@Owner("Mohammad Adil")
+	@Test(description = "GR005_Verify user is able to add a recipient in Create Email Group slider")
+	public void GR005() throws Throwable
+
+	{
+		String recipientName = jsonUtils.getJsonValue(groupsTestdataFileName, "$.GR005.recipientName");
+		String recipietEmail = jsonUtils.getJsonValue(groupsTestdataFileName, "$.GR005.recipientEmail");
+
+		signPage.signToFireflink(email, password);
+		allProjectsPage.navigateToGroups();
+		groupsPage.clickOnAddgroupButton();
+		Assert.assertTrue(groupsPage.createGroupSliderIsDisplayed());
+		groupsPage.enterGroupName("Test001");
+		groupsPage.clickOnAddRecipientButton();
+		groupsPage.enterRecipientName(recipientName);
+		groupsPage.enterRecipientEmail(recipietEmail);
+		assertTrue(groupsPage.addTheRecipientAndVerify());
+		Reporter.log("Recipient is added successfully", true);
+
 	}
 
 }

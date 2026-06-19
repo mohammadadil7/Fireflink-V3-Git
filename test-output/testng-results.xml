@@ -4,24 +4,42 @@
     <line>
       <![CDATA[Successfully signed in to fireflink]]>
     </line>
+    <line>
+      <![CDATA[Entered Recipient Name]]>
+    </line>
+    <line>
+      <![CDATA[Entered Recipient Email]]>
+    </line>
+    <line>
+      <![CDATA[Recipient is added successfully]]>
+    </line>
   </reporter-output>
-  <suite started-at="2026-06-18T18:21:32 IST" name="Default suite" finished-at="2026-06-18T18:21:54 IST" duration-ms="21936">
+  <suite started-at="2026-06-19T12:29:48 IST" name="Default suite" finished-at="2026-06-19T12:30:06 IST" duration-ms="18118">
     <groups>
     </groups>
-    <test started-at="2026-06-18T18:21:32 IST" name="Default test" finished-at="2026-06-18T18:21:54 IST" duration-ms="21936">
+    <test started-at="2026-06-19T12:29:48 IST" name="Default test" finished-at="2026-06-19T12:30:06 IST" duration-ms="18118">
       <class name="fireflink.tests.configuration.GroupsTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:fireflink.tests.configuration.GroupsTest@5f172d4a]" started-at="2026-06-18T18:21:32 IST" name="setUp" finished-at="2026-06-18T18:21:34 IST" duration-ms="2587" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:fireflink.tests.configuration.GroupsTest@245ec1a6]" started-at="2026-06-19T12:29:48 IST" name="setUp" finished-at="2026-06-19T12:29:51 IST" duration-ms="2577" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="GR004()[pri:0, instance:fireflink.tests.configuration.GroupsTest@5f172d4a]" started-at="2026-06-18T18:21:35 IST" name="GR004" description="GR004_Verify Maximum 25 characters allowed error is displayed" finished-at="2026-06-18T18:21:53 IST" duration-ms="18889" status="PASS">
+        <test-method signature="GR005()[pri:0, instance:fireflink.tests.configuration.GroupsTest@245ec1a6]" started-at="2026-06-19T12:29:51 IST" name="GR005" description="GR005_Verify user is able to add a recipient in Create Email Group slider" finished-at="2026-06-19T12:30:06 IST" duration-ms="15128" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully signed in to fireflink]]>
             </line>
+            <line>
+              <![CDATA[Entered Recipient Name]]>
+            </line>
+            <line>
+              <![CDATA[Entered Recipient Email]]>
+            </line>
+            <line>
+              <![CDATA[Recipient is added successfully]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- GR004 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:fireflink.tests.configuration.GroupsTest@5f172d4a]" started-at="2026-06-18T18:21:54 IST" name="tearDown" finished-at="2026-06-18T18:21:54 IST" duration-ms="253" status="PASS">
+        </test-method> <!-- GR005 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:fireflink.tests.configuration.GroupsTest@245ec1a6]" started-at="2026-06-19T12:30:06 IST" name="tearDown" finished-at="2026-06-19T12:30:06 IST" duration-ms="200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

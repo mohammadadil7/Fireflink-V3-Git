@@ -69,7 +69,7 @@ public class CommonPage extends BaseClass {
 	}
 
 	@Step("Delete an entity")
-	public boolean deleteAnEntity() {
+	public boolean deleteAnEntityAndVerify() {
 
 		action.moveToElement(commonPage.highlihtedLink).perform();
 		waitUtils.waitTillElementIsVisible(commonPage.moreIcon);
