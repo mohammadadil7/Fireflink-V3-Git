@@ -13,17 +13,20 @@
     <line>
       <![CDATA[Recipient is added successfully]]>
     </line>
+    <line>
+      <![CDATA[Recipient is added and searched successfully]]>
+    </line>
   </reporter-output>
-  <suite started-at="2026-06-19T12:29:48 IST" name="Default suite" finished-at="2026-06-19T12:30:06 IST" duration-ms="18118">
+  <suite started-at="2026-06-22T15:18:54 IST" name="Smoke Priority 1" finished-at="2026-06-22T15:19:25 IST" duration-ms="31305">
     <groups>
     </groups>
-    <test started-at="2026-06-19T12:29:48 IST" name="Default test" finished-at="2026-06-19T12:30:06 IST" duration-ms="18118">
+    <test started-at="2026-06-22T15:18:54 IST" name="Groups Test" finished-at="2026-06-22T15:19:25 IST" duration-ms="31305">
       <class name="fireflink.tests.configuration.GroupsTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:fireflink.tests.configuration.GroupsTest@245ec1a6]" started-at="2026-06-19T12:29:48 IST" name="setUp" finished-at="2026-06-19T12:29:51 IST" duration-ms="2577" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:fireflink.tests.configuration.GroupsTest@3062f9f4]" started-at="2026-06-22T15:18:54 IST" name="setUp" finished-at="2026-06-22T15:19:02 IST" duration-ms="7495" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="GR005()[pri:0, instance:fireflink.tests.configuration.GroupsTest@245ec1a6]" started-at="2026-06-19T12:29:51 IST" name="GR005" description="GR005_Verify user is able to add a recipient in Create Email Group slider" finished-at="2026-06-19T12:30:06 IST" duration-ms="15128" status="PASS">
+        <test-method signature="GR006()[pri:0, instance:fireflink.tests.configuration.GroupsTest@3062f9f4]" started-at="2026-06-22T15:19:02 IST" name="GR006" description="GR006_Verify user is able to add a recipient and search the added recipient" finished-at="2026-06-22T15:19:25 IST" duration-ms="22266" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully signed in to fireflink]]>
@@ -37,13 +40,16 @@
             <line>
               <![CDATA[Recipient is added successfully]]>
             </line>
+            <line>
+              <![CDATA[Recipient is added and searched successfully]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- GR005 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:fireflink.tests.configuration.GroupsTest@245ec1a6]" started-at="2026-06-19T12:30:06 IST" name="tearDown" finished-at="2026-06-19T12:30:06 IST" duration-ms="200" status="PASS">
+        </test-method> <!-- GR006 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:fireflink.tests.configuration.GroupsTest@3062f9f4]" started-at="2026-06-22T15:19:25 IST" name="tearDown" finished-at="2026-06-22T15:19:25 IST" duration-ms="663" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- fireflink.tests.configuration.GroupsTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Groups Test -->
+  </suite> <!-- Smoke Priority 1 -->
 </testng-results>

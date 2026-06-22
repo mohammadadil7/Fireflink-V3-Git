@@ -1,6 +1,5 @@
 package fireflink.pom;
 
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -56,10 +55,10 @@ public class CommonPage extends BaseClass {
 	public void searchForAnEntity(String entityName) {
 
 		waitUtils.waitTillElementIsClickable(commonPage.searchIcon);
-		waitUtils.waitForSeconds(3);
+		waitUtils.waitForSeconds(5);
 		action.moveToElement(commonPage.searchIcon).perform();
 		action.click().perform();
-		//jse.executeScript("arguments[0].click();", commonPage.searchIcon);
+		// jse.executeScript("arguments[0].click();", commonPage.searchIcon);
 		waitUtils.waitTillElementIsVisible(commonPage.elasticSearchTextfield);
 		commonPage.elasticSearchTextfield.sendKeys(entityName);
 		waitUtils.waitForSeconds(2);
@@ -77,7 +76,7 @@ public class CommonPage extends BaseClass {
 		commonPage.deleteLink.click();
 		commonPage.deleteButton.click();
 		waitUtils.waitTillElementIsVisible(commonPage.successToasterText);
-	    return commonPage.successToasterText.isDisplayed();
+		return commonPage.successToasterText.isDisplayed();
 
 	}
 

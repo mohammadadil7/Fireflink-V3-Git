@@ -1,63 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Successfully signed in to fireflink]]>
     </line>
     <line>
-      <![CDATA[Successfully signed in to fireflink]]>
+      <![CDATA[Group is created successfully]]>
     </line>
     <line>
       <![CDATA[Successfully signed in to fireflink]]>
     </line>
+    <line>
+      <![CDATA[Created group is deleted successfully]]>
+    </line>
+    <line>
+      <![CDATA[Successfully signed in to fireflink]]>
+    </line>
+    <line>
+      <![CDATA[Name required error is displayed]]>
+    </line>
+    <line>
+      <![CDATA[Successfully signed in to fireflink]]>
+    </line>
+    <line>
+      <![CDATA[Entered Recipient Name]]>
+    </line>
+    <line>
+      <![CDATA[Entered Recipient Email]]>
+    </line>
+    <line>
+      <![CDATA[Recipient is added successfully]]>
+    </line>
   </reporter-output>
-  <suite started-at="2026-06-18T18:19:05 IST" name="Smoke Priority 1" finished-at="2026-06-18T18:20:00 IST" duration-ms="54789">
+  <suite started-at="2026-06-19T16:03:41 IST" name="Smoke Priority 1" finished-at="2026-06-19T16:05:23 IST" duration-ms="101738">
     <groups>
     </groups>
-    <test started-at="2026-06-18T18:19:05 IST" name="Groups Test" finished-at="2026-06-18T18:20:00 IST" duration-ms="54789">
+    <test started-at="2026-06-19T16:03:41 IST" name="Groups Test" finished-at="2026-06-19T16:05:23 IST" duration-ms="101738">
       <class name="fireflink.tests.configuration.GroupsTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-18T18:19:05 IST" name="setUp" finished-at="2026-06-18T18:19:07 IST" duration-ms="2593" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-19T16:03:42 IST" name="setUp" finished-at="2026-06-19T16:03:55 IST" duration-ms="13606" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="GR002()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-18T18:19:08 IST" name="GR002" description="GR002_Verify user is able to create a group" finished-at="2026-06-18T18:19:23 IST" duration-ms="15350" status="PASS">
+        <test-method signature="GR002()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-19T16:03:56 IST" name="GR002" description="GR002_Verify user is able to create a group" finished-at="2026-06-19T16:04:17 IST" duration-ms="21208" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully signed in to fireflink]]>
+            </line>
+            <line>
+              <![CDATA[Group is created successfully]]>
             </line>
           </reporter-output>
         </test-method> <!-- GR002 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-18T18:19:23 IST" name="tearDown" finished-at="2026-06-18T18:19:23 IST" duration-ms="206" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-19T16:04:17 IST" name="tearDown" finished-at="2026-06-19T16:04:17 IST" duration-ms="586" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-18T18:19:23 IST" name="setUp" finished-at="2026-06-18T18:19:25 IST" duration-ms="1706" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-19T16:04:17 IST" name="setUp" finished-at="2026-06-19T16:04:20 IST" duration-ms="2738" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="GR003()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-18T18:19:25 IST" name="GR003" description="GR003_Verify user is able to create a group and delete" finished-at="2026-06-18T18:19:39 IST" depends-on-methods="fireflink.tests.configuration.GroupsTest.GR002" duration-ms="14052" status="PASS">
+        <test-method signature="GR003()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-19T16:04:20 IST" name="GR003" description="GR003_Verify user is able to create a group and delete" finished-at="2026-06-19T16:04:37 IST" depends-on-methods="fireflink.tests.configuration.GroupsTest.GR002" duration-ms="17015" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully signed in to fireflink]]>
+            </line>
+            <line>
+              <![CDATA[Created group is deleted successfully]]>
             </line>
           </reporter-output>
         </test-method> <!-- GR003 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-18T18:19:39 IST" name="tearDown" finished-at="2026-06-18T18:19:39 IST" duration-ms="195" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-19T16:04:37 IST" name="tearDown" finished-at="2026-06-19T16:04:38 IST" duration-ms="714" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-18T18:19:39 IST" name="setUp" finished-at="2026-06-18T18:19:41 IST" duration-ms="2019" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-19T16:04:38 IST" name="setUp" finished-at="2026-06-19T16:04:41 IST" duration-ms="2947" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="GR004()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-18T18:19:41 IST" name="GR004" description="GR004_Verify Maximum 25 characters allowed error is displayed" finished-at="2026-06-18T18:19:59 IST" duration-ms="18191" status="PASS">
+        <test-method signature="GR004()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-19T16:04:41 IST" name="GR004" description="GR004_Verify Group Name is required error is displayed" finished-at="2026-06-19T16:04:58 IST" duration-ms="17442" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully signed in to fireflink]]>
             </line>
+            <line>
+              <![CDATA[Name required error is displayed]]>
+            </line>
           </reporter-output>
         </test-method> <!-- GR004 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-18T18:19:59 IST" name="tearDown" finished-at="2026-06-18T18:20:00 IST" duration-ms="234" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-19T16:04:58 IST" name="tearDown" finished-at="2026-06-19T16:04:59 IST" duration-ms="796" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-19T16:04:59 IST" name="setUp" finished-at="2026-06-19T16:05:02 IST" duration-ms="2635" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="GR005()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-19T16:05:02 IST" name="GR005" description="GR005_Verify user is able to add a recipient in Create Email Group slider" finished-at="2026-06-19T16:05:23 IST" duration-ms="20824" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Successfully signed in to fireflink]]>
+            </line>
+            <line>
+              <![CDATA[Entered Recipient Name]]>
+            </line>
+            <line>
+              <![CDATA[Entered Recipient Email]]>
+            </line>
+            <line>
+              <![CDATA[Recipient is added successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- GR005 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:fireflink.tests.configuration.GroupsTest@73ad4ecc]" started-at="2026-06-19T16:05:23 IST" name="tearDown" finished-at="2026-06-19T16:05:23 IST" duration-ms="595" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

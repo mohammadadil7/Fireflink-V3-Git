@@ -9,3 +9,4 @@ fireflink\pom\GroupsPage.class
 fireflink\testutils\AllureUtils.class
 fireflink\pom\CommonPage.class
 fireflink\testutils\AllureListener.class
+fireflink\testutils\JsonUtils.class

@@ -36,7 +36,7 @@ public class GroupsTest extends BaseClass {
 	@Feature("Groups")
 	@Story("Create a group")
 	@Owner("Mohammad Adil")
-	@Test(description = "GR002_Verify user is able to create a group")
+	@Test(description = "GR002_Verify user is able to create a group", groups = "smoke")
 	public void GR002()
 
 	{
@@ -59,7 +59,7 @@ public class GroupsTest extends BaseClass {
 	@Feature("Groups")
 	@Story("Delete a created group")
 	@Owner("Mohammad Adil")
-	@Test(description = "GR003_Verify user is able to create a group and delete", dependsOnMethods = "GR002")
+	@Test(description = "GR003_Verify user is able to create a group and delete", dependsOnMethods = "GR002", groups = "smoke")
 	public void GR003()
 
 	{
@@ -74,7 +74,7 @@ public class GroupsTest extends BaseClass {
 	@Feature("Groups")
 	@Story("Error message should display if group name is skipped")
 	@Owner("Mohammad Adil")
-	@Test(description = "GR004_Verify Group Name is required error is displayed")
+	@Test(description = "GR004_Verify Group Name is required error is displayed",  groups = "smoke")
 	public void GR004()
 
 	{
@@ -92,7 +92,7 @@ public class GroupsTest extends BaseClass {
 	@Feature("Groups")
 	@Story("User can add a guest in the create group slider")
 	@Owner("Mohammad Adil")
-	@Test(description = "GR005_Verify user is able to add a recipient in Create Email Group slider")
+	@Test(description = "GR005_Verify user is able to add a recipient in Create Email Group slider",  groups = "smoke")
 	public void GR005() throws Throwable
 
 	{
@@ -112,4 +112,29 @@ public class GroupsTest extends BaseClass {
 
 	}
 
+	@Feature("Groups")
+	@Story("User can search the recipient in add groups slider")
+	@Owner("Mohammad Adil")
+	@Test(description = "GR006_Verify user is able to add a recipient and search the added recipient")
+	public void GR006() throws Throwable
+
+	{
+		String recipientName = jsonUtils.getJsonValue(groupsTestdataFileName, "$.GR005.recipientName");
+		String recipietEmail = jsonUtils.getJsonValue(groupsTestdataFileName, "$.GR005.recipientEmail");
+
+		signPage.signToFireflink(email, password);
+		allProjectsPage.navigateToGroups();
+		groupsPage.clickOnAddgroupButton();
+		Assert.assertTrue(groupsPage.createGroupSliderIsDisplayed());
+		groupsPage.enterGroupName("Test001");
+		groupsPage.clickOnAddRecipientButton();
+		groupsPage.enterRecipientName(recipientName);
+		groupsPage.enterRecipientEmail(recipietEmail);
+		assertTrue(groupsPage.addTheRecipientAndVerify());
+		Reporter.log("Recipient is added successfully", true);
+
+		Assert.assertTrue(groupsPage.searchAndVerifyTheRecipientName(recipientName));
+		Reporter.log("Recipient is added and searched successfully", true);
+
+	}
 }

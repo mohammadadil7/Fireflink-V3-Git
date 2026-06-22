@@ -4,6 +4,7 @@
 		"recipientName": "AutomationGuestUser",
 		"recipientEmail": "guestautomation01@gmial.com"
 	},
+	
 	"GR002": {
 		"testCaseName": "Invalid Login",
 		"execute": true,

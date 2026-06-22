@@ -1,9 +1,15 @@
 package fireflink.pom;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
 import fireflink.components.BaseClass;
@@ -55,6 +61,21 @@ public class GroupsPage extends BaseClass {
 
 	@FindBy(xpath = "//div[text()='Guest']")
 	private WebElement guestText;
+
+	@FindBy(xpath = "//div[contains(@class,'recipient')]/div[contains(@class,'search')]//div[@class='ff-search-icon']")
+	private WebElement recipientsSearchIcon;
+
+	@FindBy(xpath = "//input[@placeholder='Search Name, Email']")
+	private WebElement searchRecipientsTextfiled;
+
+	// Dynamic element based on Recipients Name
+	public WebElement highlightedRecipeintNameText(String recipeintName) {
+		String dynamicXpath = String.format("//span[@class='ff-highlight-bg' and text()='%s']", recipeintName);
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(dynamicXpath)));
+	}
 
 	@Step("Add group radio button is displayed")
 	public boolean addGroupButtonIsDisplayed() {
@@ -135,8 +156,17 @@ public class GroupsPage extends BaseClass {
 		groupsPage.addRecipientIcon.click();
 		waitUtils.waitTillElementIsVisible(groupsPage.guestText);
 		return groupsPage.guestText.isDisplayed();
-		
 
+	}
+
+	@Step("Search and verify the recipient name: {recipientName}")
+	public boolean searchAndVerifyTheRecipientName(String recipientName) {
+		groupsPage.recipientsSearchIcon.click();
+		waitUtils.waitTillElementIsClickable(groupsPage.searchRecipientsTextfiled);
+		groupsPage.searchRecipientsTextfiled.sendKeys(recipientName);
+		waitUtils.waitForSeconds(2);
+		action.sendKeys(Keys.ENTER).perform();
+		return groupsPage.highlightedRecipeintNameText(recipientName).isDisplayed();
 	}
 
 }
