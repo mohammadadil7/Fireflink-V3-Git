@@ -74,7 +74,7 @@ public class GroupsTest extends BaseClass {
 	@Feature("Groups")
 	@Story("Error message should display if group name is skipped")
 	@Owner("Mohammad Adil")
-	@Test(description = "GR004_Verify Group Name is required error is displayed",  groups = "smoke")
+	@Test(description = "GR004_Verify Group Name is required error is displayed")
 	public void GR004()
 
 	{
@@ -92,7 +92,7 @@ public class GroupsTest extends BaseClass {
 	@Feature("Groups")
 	@Story("User can add a guest in the create group slider")
 	@Owner("Mohammad Adil")
-	@Test(description = "GR005_Verify user is able to add a recipient in Create Email Group slider",  groups = "smoke")
+	@Test(description = "GR005_Verify user is able to add a recipient in Create Email Group slider")
 	public void GR005() throws Throwable
 
 	{
