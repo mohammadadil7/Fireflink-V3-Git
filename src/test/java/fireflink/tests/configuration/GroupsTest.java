@@ -138,16 +138,6 @@ public class GroupsTest extends BaseClass {
 
 	}
 	
-	@Test(description = "GR007_Verify allure")
-	public void GR007() throws Throwable
-
-	{
-	//	String recipientName = jsonUtils.getJsonValue(groupsTestdataFileName, "$.GR005.recipientName");
-	//	String recipietEmail = jsonUtils.getJsonValue(groupsTestdataFileName, "$.GR005.recipientEmail");
-
-		signPage.signToFireflink(email, password);
-		Assert.assertTrue(false);
-		
-	}
+	
 }
 
