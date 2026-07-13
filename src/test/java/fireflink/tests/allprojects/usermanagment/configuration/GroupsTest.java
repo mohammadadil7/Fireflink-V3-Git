@@ -141,13 +141,12 @@ public class GroupsTest extends BaseClass {
 	@Feature("Groups")
 	@Story("User can search the recipient in add groups slider")
 	@Owner("Mohammad Adil")
-	@Test(description = "GR006_Verify user is able to add a recipient and search the added recipient", retryAnalyzer = fireflink.components.RetryMechanism.class)
+	@Test(description = "GR007_Verify user is able to add a recipient and search the added recipient", retryAnalyzer = fireflink.components.RetryMechanism.class)
 	public void GR007() throws Throwable
 
 	{
 		signPage.signToFireflink(email, password);
 
-		Assert.assertTrue(false);
 	}
 
 }

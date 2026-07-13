@@ -13,7 +13,7 @@ public class UsersTest extends BaseClass {
 	String usersTestdataFile = "usermanagment/usersTestdata";
 
 	@Feature("Users")
-	@Story("Add user as admin")
+	@Story("Add new user as admin")
 	@Owner("Mohammad Adil")
 	@Test(description = "UR001-Verify user can be added as admin", groups = "smoke")
 	public void UR001() throws Throwable {
@@ -33,9 +33,9 @@ public class UsersTest extends BaseClass {
 	}
 
 	@Feature("Users")
-	@Story("Add user as admin")
+	@Story("Invalid email error message if the email does not have '@' and domain name")
 	@Owner("Mohammad Adil")
-	@Test(description = "UR001-Verify user can be added as admin")
+	@Test(description = "UR002-Verify email invalid error text is displayed")
 	public void UR002() throws Throwable {
 
 		String name = jsonUtils.getJsonValue(usersTestdataFile, "$.UR002.userName");
