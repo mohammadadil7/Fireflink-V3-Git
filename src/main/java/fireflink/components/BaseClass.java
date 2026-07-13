@@ -15,14 +15,14 @@ import org.testng.annotations.BeforeMethod;
 
 import fireflink.pom.AllProjectsPage;
 import fireflink.pom.CommonPage;
-import fireflink.pom.GroupsPage;
 import fireflink.pom.SignPage;
+import fireflink.pom.usermanagment.GroupsPage;
+import fireflink.pom.usermanagment.UsersPage;
 import fireflink.testutils.JavaUtility;
 import fireflink.testutils.JsonUtils;
 import fireflink.testutils.VerificationUtils;
 import fireflink.testutils.WaitUtils;
 import io.qameta.allure.Attachment;
-
 
 public class BaseClass {
 
@@ -44,7 +44,9 @@ public class BaseClass {
 	public static GroupsPage groupsPage;
 	public static Actions action;
 	public static JavascriptExecutor jse;
-	public static  CommonPage commonPage;
+	public static CommonPage commonPage;
+	public static UsersPage usersPage;
+
 	// public static RolesKeywords rolesKeywords;
 
 	// public static Actions actions;
@@ -87,9 +89,10 @@ public class BaseClass {
 		verificationUtils = new VerificationUtils();
 		groupsPage = new GroupsPage(driver);
 		jse = (JavascriptExecutor) driver;
-		commonPage=new CommonPage(driver);
+		commonPage = new CommonPage(driver);
 		action = new Actions(driver);
 		jsonUtils = new JsonUtils();
+		usersPage = new UsersPage(driver);
 		// rolesKeywords = new RolesKeywords();
 		// action = new Actions(driver);
 

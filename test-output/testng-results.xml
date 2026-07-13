@@ -5,51 +5,33 @@
       <![CDATA[Successfully signed in to fireflink]]>
     </line>
     <line>
-      <![CDATA[Entered Recipient Name]]>
-    </line>
-    <line>
-      <![CDATA[Entered Recipient Email]]>
-    </line>
-    <line>
-      <![CDATA[Recipient is added successfully]]>
-    </line>
-    <line>
-      <![CDATA[Recipient is added and searched successfully]]>
+      <![CDATA[Successfully navigated to users page]]>
     </line>
   </reporter-output>
-  <suite started-at="2026-06-22T15:18:54 IST" name="Smoke Priority 1" finished-at="2026-06-22T15:19:25 IST" duration-ms="31305">
+  <suite started-at="2026-07-13T15:27:55 IST" name="Default suite" finished-at="2026-07-13T15:28:13 IST" duration-ms="18382">
     <groups>
     </groups>
-    <test started-at="2026-06-22T15:18:54 IST" name="Groups Test" finished-at="2026-06-22T15:19:25 IST" duration-ms="31305">
-      <class name="fireflink.tests.configuration.GroupsTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:fireflink.tests.configuration.GroupsTest@3062f9f4]" started-at="2026-06-22T15:18:54 IST" name="setUp" finished-at="2026-06-22T15:19:02 IST" duration-ms="7495" status="PASS">
+    <test started-at="2026-07-13T15:27:55 IST" name="Default test" finished-at="2026-07-13T15:28:13 IST" duration-ms="18382">
+      <class name="fireflink.tests.allprojects.usermanagment.configuration.UsersTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:fireflink.tests.allprojects.usermanagment.configuration.UsersTest@3c69362a]" started-at="2026-07-13T15:27:55 IST" name="setUp" finished-at="2026-07-13T15:27:59 IST" duration-ms="4029" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="GR006()[pri:0, instance:fireflink.tests.configuration.GroupsTest@3062f9f4]" started-at="2026-06-22T15:19:02 IST" name="GR006" description="GR006_Verify user is able to add a recipient and search the added recipient" finished-at="2026-06-22T15:19:25 IST" duration-ms="22266" status="PASS">
+        <test-method signature="UR002()[pri:0, instance:fireflink.tests.allprojects.usermanagment.configuration.UsersTest@3c69362a]" started-at="2026-07-13T15:27:59 IST" name="UR002" description="UR001-Verify user can be added as admin" finished-at="2026-07-13T15:28:13 IST" duration-ms="13918" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully signed in to fireflink]]>
             </line>
             <line>
-              <![CDATA[Entered Recipient Name]]>
-            </line>
-            <line>
-              <![CDATA[Entered Recipient Email]]>
-            </line>
-            <line>
-              <![CDATA[Recipient is added successfully]]>
-            </line>
-            <line>
-              <![CDATA[Recipient is added and searched successfully]]>
+              <![CDATA[Successfully navigated to users page]]>
             </line>
           </reporter-output>
-        </test-method> <!-- GR006 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:fireflink.tests.configuration.GroupsTest@3062f9f4]" started-at="2026-06-22T15:19:25 IST" name="tearDown" finished-at="2026-06-22T15:19:25 IST" duration-ms="663" status="PASS">
+        </test-method> <!-- UR002 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:fireflink.tests.allprojects.usermanagment.configuration.UsersTest@3c69362a]" started-at="2026-07-13T15:28:13 IST" name="tearDown" finished-at="2026-07-13T15:28:13 IST" duration-ms="228" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- fireflink.tests.configuration.GroupsTest -->
-    </test> <!-- Groups Test -->
-  </suite> <!-- Smoke Priority 1 -->
+      </class> <!-- fireflink.tests.allprojects.usermanagment.configuration.UsersTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

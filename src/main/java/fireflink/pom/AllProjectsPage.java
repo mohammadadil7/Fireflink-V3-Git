@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
 
 import fireflink.components.BaseClass;
 import io.qameta.allure.Step;
@@ -27,6 +28,9 @@ public class AllProjectsPage extends BaseClass {
 	@FindBy(xpath = "//span[text()='Groups']")
 	private WebElement groupsTab;
 
+	@FindBy(xpath = "//span[text()='Users']")
+	private WebElement usersTab;
+
 	
 	//Steps
 	@Step("Navigate to groups page")
@@ -36,7 +40,22 @@ public class AllProjectsPage extends BaseClass {
 		configurationTab.click();
 		userManagementTab.click();
 		groupsTab.click();
+		Reporter.log("Successfully navigated to groups page", true);
+
 
 	}
+	
+	@Step("Navigate to users page")
+
+	public void navigateToUsers() {
+		waitUtils.waitTillElementIsClickable(configurationTab);
+		configurationTab.click();
+		userManagementTab.click();
+		usersTab.click();
+		Reporter.log("Successfully navigated to users page", true);
+
+
+	}
+
 
 }

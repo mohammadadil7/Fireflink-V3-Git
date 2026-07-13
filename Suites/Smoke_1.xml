@@ -13,7 +13,9 @@
 </groups>
     <classes>
   
-      <class name="fireflink.tests.configuration.GroupsTest" />
+      <class name="fireflink.tests.allprojects.usermanagment.configuration.GroupsTest" />
+      
+      <class name="fireflink.tests.allprojects.usermanagment.configuration.UsersTest"></class>
   
     </classes>
   </test> <!-- Test -->
