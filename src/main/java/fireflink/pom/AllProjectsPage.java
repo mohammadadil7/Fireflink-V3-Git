@@ -14,10 +14,9 @@ public class AllProjectsPage extends BaseClass {
 	public AllProjectsPage(WebDriver driver) {
 
 		PageFactory.initElements(driver, this);
-
 	}
-	
-	//Elements
+
+	// Elements
 
 	@FindBy(xpath = "//div[@class='ff-app-header-nav-bar-item']/div[text()='Configuration']")
 	private WebElement configurationTab;
@@ -31,8 +30,10 @@ public class AllProjectsPage extends BaseClass {
 	@FindBy(xpath = "//span[text()='Users']")
 	private WebElement usersTab;
 
-	
-	//Steps
+	@FindBy(css = ".ff-table-row-wrapper")
+	private WebElement tableData;
+
+	// Steps
 	@Step("Navigate to groups page")
 
 	public void navigateToGroups() {
@@ -40,11 +41,11 @@ public class AllProjectsPage extends BaseClass {
 		configurationTab.click();
 		userManagementTab.click();
 		groupsTab.click();
+		waitUtils.waitTillElementIsVisible(tableData);
 		Reporter.log("Successfully navigated to groups page", true);
 
-
 	}
-	
+
 	@Step("Navigate to users page")
 
 	public void navigateToUsers() {
@@ -52,10 +53,9 @@ public class AllProjectsPage extends BaseClass {
 		configurationTab.click();
 		userManagementTab.click();
 		usersTab.click();
+		waitUtils.waitTillElementIsVisible(tableData);
 		Reporter.log("Successfully navigated to users page", true);
 
-
 	}
-
 
 }

@@ -57,6 +57,16 @@ public class WaitUtils extends BaseClass {
 			e.printStackTrace();
 		}
 	}
+	
+	public void waitTillElementIsInvisible(WebElement element) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(explicitWait));
+			wait.until(ExpectedConditions.invisibilityOf(element));
+		} catch (Exception e) {
+			throw new RuntimeException("Error while waiting for element to be visible: " + e.getMessage());
+		}
+	}
+
 
 	public void setImplicitTimeout(int seconds) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));

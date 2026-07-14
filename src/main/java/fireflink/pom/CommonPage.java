@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 import fireflink.components.BaseClass;
 import io.qameta.allure.Step;
@@ -52,7 +51,7 @@ public class CommonPage extends BaseClass {
 	}
 
 	@Step("Search for an entity: {entityName}")
-	public void searchForAnEntity(String entityName) {
+	public boolean searchForAnEntity(String entityName) {
 
 		waitUtils.waitTillElementIsClickable(commonPage.searchIcon);
 		waitUtils.waitForSeconds(5);
@@ -63,8 +62,8 @@ public class CommonPage extends BaseClass {
 		commonPage.elasticSearchTextfield.sendKeys(entityName);
 		waitUtils.waitForSeconds(2);
 		action.sendKeys(Keys.ENTER).perform();
-		Assert.assertTrue(commonPage.highlihtedLink.isDisplayed());
-
+        return commonPage.highlihtedLink.isDisplayed();
+		
 	}
 
 	@Step("Delete an entity")

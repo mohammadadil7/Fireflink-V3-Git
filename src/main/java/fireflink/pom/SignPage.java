@@ -32,10 +32,15 @@ public class SignPage extends BaseClass {
 	@FindBy(xpath = "//span[text()='All Projects']")
 	private WebElement allProjectsText;
 
+	@FindBy(id = "loader")
+	private WebElement fireflinkLoader;
+
 	@Step("Sign-in to Fireflink")
 	public void signToFireflink(String email, String password) {
 
-		waitUtils.waitForSeconds(10000);
+		// waitUtils.waitForSeconds(10000);
+		waitUtils.waitTillElementIsInvisible(fireflinkLoader);
+	//	waitUtils.waitTillElementIsClickable(signInButton);
 		emailTextfield.sendKeys(email);
 		passwordTextfield.sendKeys(password);
 		signInButton.click();

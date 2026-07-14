@@ -11,6 +11,7 @@ import io.qameta.allure.Story;
 public class UsersTest extends BaseClass {
 
 	String usersTestdataFile = "usermanagment/usersTestdata";
+	String userName;
 
 	@Feature("Users")
 	@Story("Add new user as admin")
@@ -18,8 +19,8 @@ public class UsersTest extends BaseClass {
 	@Test(description = "UR001-Verify user can be added as admin", groups = "smoke")
 	public void UR001() throws Throwable {
 
-		String name = jsonUtils.getJsonValue(usersTestdataFile, "$.UR001.userName");
-		String userEmail = name + javaUtility.generateRandomNumber(5) + "@gmail.com";
+		userName = jsonUtils.getJsonValue(usersTestdataFile, "$.UR001.userName");
+		String userEmail = userName + javaUtility.generateRandomNumber(5) + "@gmail.com";
 		String privilage = jsonUtils.getJsonValue(usersTestdataFile, "$.UR001.privilege");
 
 		signPage.signToFireflink(email, password);
@@ -27,7 +28,7 @@ public class UsersTest extends BaseClass {
 		usersPage.clickOnAddUserButton();
 		usersPage.enterUserEmail(userEmail);
 		usersPage.selectPrivilage(privilage);
-		usersPage.enterNameAndClickOnCreateButton(name);
+		usersPage.enterNameAndClickOnCreateButton(userName);
 		Assert.assertTrue(commonPage.successToasterIsDisplayed(), "Success toaster is not displayed");
 
 	}
@@ -49,6 +50,18 @@ public class UsersTest extends BaseClass {
 		usersPage.selectPrivilage(privilage);
 		Assert.assertTrue(usersPage.enterValidEmailIsDisplayed(), "Enter valid email id text is not displayed");
 
+	}
+
+	@Feature("Users")
+	@Story("Search an added user")
+	@Owner("Mohammad Adil")
+	@Test(description = "UR003-Verify admin user is able to search for an added user", dependsOnMethods = "UR001")
+	public void UR003() throws Throwable {
+
+		signPage.signToFireflink(email, password);
+		allProjectsPage.navigateToUsers();
+	 	Assert.assertTrue(commonPage.searchForAnEntity(userName));
+	 	
 	}
 
 }

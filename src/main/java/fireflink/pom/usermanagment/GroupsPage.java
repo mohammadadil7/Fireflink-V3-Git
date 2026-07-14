@@ -133,6 +133,7 @@ public class GroupsPage extends BaseClass {
 
 	@Step("Click on add recipient button")
 	public void clickOnAddRecipientButton() {
+		waitUtils.waitTillElementIsClickable(addRecipientButton);
 		groupsPage.addRecipientButton.click();
 	}
 
