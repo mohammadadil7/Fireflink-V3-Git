@@ -16,7 +16,7 @@ public class UsersTest extends BaseClass {
 	@Feature("Users")
 	@Story("Add new user as admin")
 	@Owner("Mohammad Adil")
-	@Test(description = "UR001-Verify user can be added as admin", groups = "smoke")
+	@Test(description = "UR001-Verify user can be added as admin")
 	public void UR001() throws Throwable {
 
 		userName = jsonUtils.getJsonValue(usersTestdataFile, "$.UR001.userName");
