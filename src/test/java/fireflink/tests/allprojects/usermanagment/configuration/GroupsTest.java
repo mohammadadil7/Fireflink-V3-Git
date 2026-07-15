@@ -7,6 +7,7 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import fireflink.components.BaseClass;
+import fireflink.dataprovider.DataProviderManager;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
@@ -19,7 +20,7 @@ public class GroupsTest extends BaseClass {
 	@Feature("Groups")
 	@Story("Open create group slider")
 	@Owner("Mohammad Adil")
-	@Test(description = "GR001_Verify user is able to view create group slider", groups = "smoke")
+	@Test(description = "GR001_Verify user is able to view create group slider")
 	public void GR001()
 
 	{
@@ -139,13 +140,23 @@ public class GroupsTest extends BaseClass {
 	}
 
 	@Feature("Groups")
-	@Story("User can search the recipient in add groups slider")
+	@Story("User can add multiple recipients at once")
 	@Owner("Mohammad Adil")
-	@Test(description = "GR007_Verify user is able to add a recipient and search the added recipient", retryAnalyzer = fireflink.components.RetryMechanism.class)
-	public void GR007() throws Throwable
+	@Test(description = "GR007_Verify user is able to add multiple Recipients", dataProvider = "AddMultipleRecipient", dataProviderClass = DataProviderManager.class, groups = "smoke")
+	public void GR007(String recipientName, String recipietEmail) throws Throwable
 
 	{
+
 		signPage.signToFireflink(email, password);
+		allProjectsPage.navigateToGroups();
+		groupsPage.clickOnAddgroupButton();
+		Assert.assertTrue(groupsPage.createGroupSliderIsDisplayed());
+		groupsPage.enterGroupName("Test001");
+		groupsPage.clickOnAddRecipientButton();
+		groupsPage.enterRecipientName(recipientName);
+		groupsPage.enterRecipientEmail(recipietEmail);
+		assertTrue(groupsPage.addTheRecipientAndVerify());
+		Reporter.log("Recipient is added successfully " + recipientName + " and " + recipietEmail, true);
 
 	}
 

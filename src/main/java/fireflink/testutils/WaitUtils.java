@@ -2,10 +2,12 @@ package fireflink.testutils;
 
 import java.time.Duration;
 
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import fireflink.components.BaseClass;
@@ -57,7 +59,7 @@ public class WaitUtils extends BaseClass {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void waitTillElementIsInvisible(WebElement element) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(explicitWait));
@@ -67,8 +69,24 @@ public class WaitUtils extends BaseClass {
 		}
 	}
 
-
 	public void setImplicitTimeout(int seconds) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
 	}
+
+	public void fluentWait_waitTillElementIsInvisible(WebElement element) {
+		try {
+
+			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(BaseClass.driver)
+					.withTimeout(Duration.ofSeconds(20))
+					.pollingEvery(Duration.ofMillis(100))
+					.ignoring(RuntimeException.class)
+					.ignoring(StaleElementReferenceException.class);
+
+			         wait.until(ExpectedConditions.invisibilityOf(element));
+
+		} catch (Exception e) {
+			throw new RuntimeException("Error while waiting for element to be visible: " + e.getMessage());
+		}
+	}
+
 }

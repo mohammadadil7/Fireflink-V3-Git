@@ -3,6 +3,7 @@ package fireflink.pom.usermanagment;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -71,7 +72,22 @@ public class UsersPage extends BaseClass {
 	@Step("Select privilage as admin")
 	public void selectPrivilage(String privilage) {
 		privilageDropdown.click();
-		privilegeOption(privilage).click();
+		
+		//Handling StaleElementReferenceException
+		int retries = 3;
+
+		while (retries > 0) {
+
+			try {
+				waitUtils.waitTillElementIsClickable(privilegeOption(privilage));
+				privilegeOption(privilage).click();
+				return;
+
+			} catch (StaleElementReferenceException e) {
+				retries--;
+			}
+
+		}
 
 	}
 

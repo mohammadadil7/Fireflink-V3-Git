@@ -12,6 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.asserts.SoftAssert;
 
 import fireflink.pom.AllProjectsPage;
 import fireflink.pom.CommonPage;
@@ -46,6 +47,7 @@ public class BaseClass {
 	public static JavascriptExecutor jse;
 	public static CommonPage commonPage;
 	public static UsersPage usersPage;
+	protected static SoftAssert softAssert;
 
 	// public static RolesKeywords rolesKeywords;
 
@@ -93,6 +95,7 @@ public class BaseClass {
 		action = new Actions(driver);
 		jsonUtils = new JsonUtils();
 		usersPage = new UsersPage(driver);
+		softAssert = new SoftAssert();
 		// rolesKeywords = new RolesKeywords();
 		// action = new Actions(driver);
 
@@ -103,8 +106,17 @@ public class BaseClass {
 
 	@AfterMethod
 	public void tearDown() {
-		if (driver != null) {
-			driver.quit();
+		try {
+
+			softAssert.assertAll();
+
+		}
+
+		finally {
+
+			if (driver != null) {
+				driver.quit();
+			}
 		}
 
 	}

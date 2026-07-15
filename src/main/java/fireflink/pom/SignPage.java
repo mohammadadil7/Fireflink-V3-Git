@@ -38,9 +38,8 @@ public class SignPage extends BaseClass {
 	@Step("Sign-in to Fireflink")
 	public void signToFireflink(String email, String password) {
 
-		// waitUtils.waitForSeconds(10000);
-		waitUtils.waitTillElementIsInvisible(fireflinkLoader);
-	//	waitUtils.waitTillElementIsClickable(signInButton);
+		// waitUtils.waitTillElementIsInvisible(fireflinkLoader);
+		waitUtils.fluentWait_waitTillElementIsInvisible(fireflinkLoader);
 		emailTextfield.sendKeys(email);
 		passwordTextfield.sendKeys(password);
 		signInButton.click();
