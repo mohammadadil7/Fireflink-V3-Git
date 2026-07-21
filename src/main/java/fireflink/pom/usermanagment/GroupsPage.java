@@ -56,7 +56,7 @@ public class GroupsPage extends BaseClass {
 	@FindBy(xpath = "//input[@name='email']")
 	private WebElement recipientEmailTextfield;
 
-	@FindBy(xpath = "//div[contains(@class,'recipient_privilege_button')]/div[1]")
+	@FindBy(xpath = "//div[contains(@class,'recipient_privilege_button')]/span[@data-tooltip='Add']")
 	private WebElement addRecipientIcon;
 
 	@FindBy(xpath = "//div[text()='Guest']")
@@ -154,6 +154,7 @@ public class GroupsPage extends BaseClass {
 
 	@Step("Add Recipient and verify")
 	public boolean addTheRecipientAndVerify() {
+		waitUtils.waitTillElementIsClickable(groupsPage.addRecipientIcon);
 		groupsPage.addRecipientIcon.click();
 		waitUtils.waitTillElementIsVisible(groupsPage.guestText);
 		return groupsPage.guestText.isDisplayed();
