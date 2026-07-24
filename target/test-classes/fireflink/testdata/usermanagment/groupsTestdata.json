@@ -1,0 +1,15 @@
+{
+	"GR005": {
+		"testCaseName": "GR005_Verify user is able to add a recipient in Create Email Group slider",
+		"recipientName": "AutomationGuestUser",
+		"recipientEmail": "guestautomation01@gmial.com"
+	},
+	
+	"GR002": {
+		"testCaseName": "Invalid Login",
+		"execute": true,
+		"email": "wrong@test.com",
+		"password": "123",
+		"expectedError": "Invalid credentials"
+	}
+}

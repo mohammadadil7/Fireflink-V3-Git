@@ -30,7 +30,7 @@ public class AllProjectsPage extends BaseClass {
 	@FindBy(xpath = "//span[text()='Users']")
 	private WebElement usersTab;
 
-	@FindBy(css = ".ff-table-row-wrapper")
+	@FindBy(xpath = "//div[@class='ff-no-data-content' or @class='ff-table-row-wrapper']")
 	private WebElement tableData;
 
 	// Steps
